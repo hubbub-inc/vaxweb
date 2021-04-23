@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sparkline/flutter_sparkline.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'dart:html' as html;
 
 class Dashboard extends StatefulWidget
 {
@@ -42,8 +43,12 @@ class _DashboardState extends State<Dashboard>
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>
                 [
-                  Text('hubbub.com', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.w700, fontSize: 14.0)),
-                  Icon(Icons.arrow_drop_down, color: Colors.black54)
+                  GestureDetector(
+                  		child: Text('hubbub.com', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.w700, fontSize: 14.0)),
+                  		onTap: () {
+                  				html.window.open('https://hubbub-inc.github.io/portfolio_site/', 'new tab');
+                  				},
+                  				),
                 ],
               ),
             )
